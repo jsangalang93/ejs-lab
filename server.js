@@ -7,6 +7,14 @@ app.get('/', (req, res) => {
     });
 });
 
+app.get('/menu', (req, res)=> {
+    res.render('menu.ejs', {
+    restaurant
+    })
+});
+
+
+
 const restaurant = {
     name: 'The Green Byte Bistro',
     isOpen: true,
