@@ -7,10 +7,17 @@
 </head>
 <body>
   <h1>Full Menu</h1>
-  
-  <% let menu = true %>
-    <% if (menu) {%>
-    <%= restaurant.menu %>
-    <% } %>
+
+  <!-- <% let menu = true %> -->
+    <!-- <% for(menu) {%> -->
+    <!-- <%= restaurant.menu %> -->
+    <!-- <% } %> -->
+    
+    <% let info.forEach((object) => { %>
+        <%=res.send(name)%>
+        <%=res.send(price)%>
+        <%=res.send(rating)%>
+        <%=res.send(details)%>
+    <%})%>
 </body>
 </html>
