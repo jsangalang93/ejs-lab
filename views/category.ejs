@@ -8,5 +8,18 @@
 <body>
     <%- include('./partials/nav') %>
     <h1>Full Menu</h1>
+
+    <% const resItem = [] %>
+    <% itemSplice.forEach((item)=> { %>
+        <% if(item.category === req.params.category) %>
+        <%= res.render(itemSplice) %>
+        
+
+
+<%}%>
+<%)%>
+    
 </body>
+
 </html>
+

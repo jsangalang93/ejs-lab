@@ -62,26 +62,44 @@ app.get('/menu', (req, res)=> {
     })
 });
 
-// app.get('/menu:category', (req, res)=> {
-//   res.render('category'.ejs)
-//   });
 
-  app.get('/menu/:category', (req, res)=> {
-    const menuItems = []
-    const menuCategory = restaurant.menu [index].category
-    
 
-    for(let i =0; i=>menu.length; i++) {
-      if(menuCategory[i] === 'mains'){
-        res.render(mains);
-        } else if(menuCategory[i]=== 'sides') {
-          res.render(sides);
+app.get('/menu/:category', (req, res)=> {
+  console.log("category", req.params.category);
+    const itemSplice = []
+      console.log(restaurant.menu);
+      
+      restaurant.menu.forEach((menuItem)=>{
+        console.log("menu items", menuItem.name);
+        if (menuItem.category === req.params.category) {
+          itemSplice.push(menuItem)
         } else {
-          res.render(desserts);
+          console.log('pick a valid category');
         }
+        
+}
 
-      }
-    });
+    )
+    console.log(itemSplice);
+    res.render('category.ejs', {
+      itemSplice
+    })
+
+
+  //   menu.forEach((item) => {
+  //     console.log ('mains')
+  // })
+  // res.render('category.ejs');
+});
+
+
+
+  // app.get('/menu/:category', (req, res)=> {
+  //   });
+
+    // items.forEach(item) => {
+
+    // }
 
 
     // const menuItems = ['mains', 'desserts', 'sides']
