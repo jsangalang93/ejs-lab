@@ -1,31 +1,6 @@
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res) => {
-  res.render('home.ejs', {
-    restaurant
-    });
-});
-
-app.get('/menu', (req, res)=> {
-    res.render('menu.ejs', {
-    restaurant
-    })
-});
-
-app.get('/menu:category', (req, res)=> {
-  res.render('category'.ejs)
-  });
-
-  app.get('/menu:mains', (req, res)=> {
-    // const sides = restaurant.menu.filter('sides')
-    // const mains = restaurant.menu.filter('mains')
-    // const desserts = restaurant.menu.filter('desserts')
-    res.render('category'.ejs, {
-      mains: restaurant.menu.filter('mains')
-    })
-    });
-
 const restaurant = {
     name: 'The Green Byte Bistro',
     isOpen: true,
@@ -74,5 +49,45 @@ const restaurant = {
       }
     ]
   }
+
+app.get('/', (req, res) => {
+  res.render('home.ejs', {
+    restaurant
+    });
+});
+
+app.get('/menu', (req, res)=> {
+    res.render('menu.ejs', {
+    restaurant
+    })
+});
+
+// app.get('/menu:category', (req, res)=> {
+//   res.render('category'.ejs)
+//   });
+
+  app.get('/menu/:category', (req, res)=> {
+    const menuItems = []
+    const menuCategory = restaurant.menu [index].category
+    
+
+    for(let i =0; i=>menu.length; i++) {
+      if(menuCategory[i] === 'mains'){
+        res.render(mains);
+        } else if(menuCategory[i]=== 'sides') {
+          res.render(sides);
+        } else {
+          res.render(desserts);
+        }
+
+      }
+    });
+
+
+    // const menuItems = ['mains', 'desserts', 'sides']
+    // const  = menuItems.filter ('mains')
+    // res.render(Hope)
+
+
 
 app.listen(3000);
