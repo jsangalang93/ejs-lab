@@ -6,13 +6,19 @@
   <title>Menu</title>
 </head>
 <body>
+  <%- include('./partials/nav') %>
   <h1>Full Menu</h1>
   
-  <% let menu.index.forEach((array) => { %>
-    <%=res.render(menu [index] .name)%>
-    <%=res.render(menu [index] .price)%>
-    <%=res.render(menu [index] .rating)%>
-    <%=res.render(menu [index] .details)%>
+  <ul>
+    <% const menu = restaurant.menu; %>
+    <% menu.forEach((item) => { %>
+      <li>
+        <%=item.name%>,
+        $ <%=item.price%>,
+        Rating: <%=item.rating%>,
+        Details: <%=item.details%>
+      </li>
+    </ul>
   <%})%>
 </body>
 </html>

@@ -13,7 +13,18 @@ app.get('/menu', (req, res)=> {
     })
 });
 
+app.get('/menu:category', (req, res)=> {
+  res.render('category'.ejs)
+  });
 
+  app.get('/menu:mains', (req, res)=> {
+    // const sides = restaurant.menu.filter('sides')
+    // const mains = restaurant.menu.filter('mains')
+    // const desserts = restaurant.menu.filter('desserts')
+    res.render('category'.ejs, {
+      mains: restaurant.menu.filter('mains')
+    })
+    });
 
 const restaurant = {
     name: 'The Green Byte Bistro',
