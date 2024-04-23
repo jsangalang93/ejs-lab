@@ -62,8 +62,6 @@ app.get('/menu', (req, res)=> {
     })
 });
 
-
-
 app.get('/menu/:category', (req, res)=> {
   console.log("category", req.params.category);
     const itemSplice = []
